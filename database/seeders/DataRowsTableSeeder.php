@@ -528,7 +528,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{"options":{"Du h\\u1ecdc sinh":"Du h\\u1ecdc sinh","Xu\\u1ea5t kh\\u1ea9u lao \\u0111\\u1ed9ng":"Ou\\u1ea5t kh\\u1ea9u lao \\u0111\\u1ed9ng"}}',
+                'details' => '{"default":"Du h\\u1ecdc sinh","options":{"Du h\\u1ecdc sinh":"Du h\\u1ecdc sinh","Xu\\u1ea5t kh\\u1ea9u lao \\u0111\\u1ed9ng":"Xu\\u1ea5t kh\\u1ea9u lao \\u0111\\u1ed9ng"}}',
                 'order' => 2,
             ),
             32 => 
@@ -625,7 +625,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{}',
-                'order' => 2,
+                'order' => 3,
             ),
             38 => 
             array (
@@ -641,7 +641,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{}',
-                'order' => 3,
+                'order' => 4,
             ),
             39 => 
             array (
@@ -657,7 +657,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{}',
-                'order' => 4,
+                'order' => 5,
             ),
             40 => 
             array (
@@ -673,7 +673,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 5,
+                'order' => 6,
             ),
             41 => 
             array (
@@ -689,7 +689,23 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 6,
+                'order' => 7,
+            ),
+            42 => 
+            array (
+                'id' => 43,
+                'data_type_id' => 9,
+                'field' => 'collaborators_user_belongsto_user_relationship',
+                'type' => 'relationship',
+                'display_name' => 'users',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"model":"TCG\\\\Voyager\\\\Models\\\\User","table":"users","type":"belongsTo","column":"user_id","key":"id","label":"name","pivot_table":"cache","pivot":"0","taggable":"0"}',
+                'order' => 2,
             ),
         ));
         
