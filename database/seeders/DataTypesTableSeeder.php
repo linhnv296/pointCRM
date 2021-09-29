@@ -32,10 +32,10 @@ class DataTypesTableSeeder extends Seeder
                 'controller' => 'TCG\\Voyager\\Http\\Controllers\\VoyagerUserController',
                 'description' => NULL,
                 'generate_permissions' => 1,
-                'server_side' => 0,
+                'server_side' => 1,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-09-26 12:35:50',
-                'updated_at' => '2021-09-26 12:40:58',
+                'updated_at' => '2021-09-29 16:32:22',
             ),
             1 => 
             array (
