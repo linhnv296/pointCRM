@@ -10,7 +10,6 @@
 </head>
 <body>
     <div>
-        @include('header')
         @yield('content')
         @include('footer')
     </div>

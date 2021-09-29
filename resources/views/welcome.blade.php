@@ -7,18 +7,12 @@
 <!--Header Section-->
 <section class="bg-gradient pt-5 pb-6">
     <div class="container">
-        <div class="row">
-            <div class="col-12 d-flex flex-row align-items-center justify-content-between">
-                <div class="heading-brand">Point CRM</div>
-                <a href="" class="btn btn-dark" target="_blank">Login</a>
-            </div>
-        </div>
         <div class="row mt-6">
             <div class="col-md-8 mx-auto text-center">
-                <h1>Syntax Highlighter for Every Language</h1>
-                <p class="lead mb-5">Prism is a lightweight, extensible syntax highlighter, built with modern web
-                    standards in mind. It’s used in thousands of websites, including some of those you visit daily.</p>
-                <a href="" class="btn btn-success svg-icon">
+                <h1>What is Lorem Ipsum?</h1>
+                <p class="lead mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book..</p>
+                <a href="{{route("auth.register")}}" class="btn btn-success svg-icon">
                     <em class="mr-2" data-feather="github"></em>
                     Register
                 </a>
@@ -65,7 +59,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2 class="text-center text-md-left">Reasons Why People Love <span class="text-success">Prism.js</span></h2>
+                <h2 class="text-center text-md-left">Lorem Ipsum is simply dummy <span class="text-success">Point.CRM</span></h2>
                 <div class="row feature-grid">
                     <div class="col-sm-6">
                         <div class="media">
@@ -150,7 +144,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2 class="text-center text-md-left">Used by Thousands of Companies</h2>
-                <p class="lead text-muted">Prism.js is used on several websites, small and large.</p>
+                <p class="lead text-muted">Point.CRM Lorem Ipsum is simply dummy.</p>
                 <div class="mt-5 d-flex flex-row justify-content-md-between flex-wrap press-icons">
                     <img src="https://logo.clearbit.com/google.com?size=60" alt="Google"/>
                     <img src="https://logo.clearbit.com/twitter.com?size=60" alt="Twitter"/>
