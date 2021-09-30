@@ -112,7 +112,7 @@
                                             @endif
                                         </th>
                                     @endforeach
-                                    <th class="actions text-right dt-not-orderable">{{ __('voyager::generic.actions') }}</th>
+                                    <th class="actions text-center dt-not-orderable">{{ __('voyager::generic.actions') }}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -196,8 +196,26 @@
                                                           style="background-color: {{ $data->{$row->field} }}">{{ $data->{$row->field} }}</span>
                                                 @elseif($row->type == 'text')
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
+                                                    @if($row->field == "level")
+                                                        @if($data->{$row->field} == 1)
+                                                            <div>Tài khoản khóa học</div>
+                                                        @elseif($data->{$row->field} == 2)
+                                                            <div>Du học sinh</div>
+                                                        @elseif($data->{$row->field} == 3)
+                                                            <div>Xuất khẩu lao động</div>
+                                                        @else
+                                                            <div>Tài chưa xác thực</div>
+                                                        @endif
+                                                    @elseif($row->field == "is_collaborator")
+                                                        @if($data->{$row->field} == 1)
+                                                            <div>Cộng tác viên</div>
+                                                        @else
+                                                            <div>Chưa là cộng tác viên</div>
+                                                        @endif
+                                                    @else
                                                     <div>{{ mb_strlen( $data->{$row->field} ) > 200 ? mb_substr($data->{$row->field}, 0, 200) . ' ...' : $data->{$row->field} }}</div>
-                                                @elseif($row->type == 'text_area')
+                                                    @endif
+                                                    @elseif($row->type == 'text_area')
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
                                                     <div>{{ mb_strlen( $data->{$row->field} ) > 200 ? mb_substr($data->{$row->field}, 0, 200) . ' ...' : $data->{$row->field} }}</div>
                                                 @elseif($row->type == 'file' && !empty($data->{$row->field}) )
@@ -274,14 +292,28 @@
                                                     <span>{{ $data->{$row->field} }}</span>
                                                 @endif
                                             </td>
+
                                         @endforeach
                                         <td class="no-sort no-click bread-actions">
-                                            @if($data->level == 1)
+{{--                                            @if($data->level == 1)--}}
+{{--                                                @foreach($actions as $action)--}}
+{{--                                                    @if (!method_exists($action, 'massAction'))--}}
+{{--                                                        @include('voyager::collaborators-users.partials.actions', ['action' => $action, ])--}}
+{{--                                                    @endif--}}
+{{--                                                @endforeach--}}
+{{--                                            @endif--}}
+                                            @if($data->level == 0 || $data->level > 3 || !$data->level)
+                                                <span class="btn btn-primary">Xác thực tài khoản</span>
+                                            @elseif($data->level == 1)
                                                 @foreach($actions as $action)
                                                     @if (!method_exists($action, 'massAction'))
-                                                        @include('voyager::collaborators-users.partials.actions', ['action' => $action])
+                                                        @include('voyager::collaborators-users.partials.actions', ['action' => $action, ])
                                                     @endif
                                                 @endforeach
+                                            @elseif($data->level == 2)
+
+                                            @elseif($data->level == 3)
+                                            @else
                                             @endif
                                         </td>
                                     </tr>
