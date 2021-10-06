@@ -19,10 +19,10 @@
                 <form method="POST" enctype="multipart/form-data" action="{{route('auth.login')}}">
                     @csrf
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                               placeholder="Enter email" name="email">
-                        @error('email')
+                        <label for="exampleInputEmail1">User name</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1"
+                               placeholder="Enter user name" name="name">
+                        @error('name')
                         <small class="form-text text-danger">{{ $message }}</small>
                         @enderror
                     </div>

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CollaboratorsUser;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\VoyagerBaseController;
@@ -15,6 +17,16 @@ class CollaboratorsUserController extends VoyagerBaseController
     public function create(Request $request) {
         return redirect($this->mainView);
     }
+
+    public function store(Request $request) {
+        CollaboratorsUser::create([
+            'user_id' => Auth::user()->id,
+            'user_course' => $request->get('user_course'),
+            'level' => 1
+        ]);
+        return redirect()->back();
+    }
+
 
     public function edit(Request $request, $id)
     {

@@ -43,7 +43,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6 date">
                             <label for="date_of_birth">Ngày Sinh <span class="requied padding-5">*</span></label>
-                            <input type="text" class="form-control" value="02-16-2012" id="date_of_birth" name="date_of_birth">
+                            <input class="form-control" id="date_of_birth" name="date_of_birth">
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar"></span>
                            </span>
@@ -129,10 +129,12 @@
         </div>
     </div>
 @endsection
+@section('javascript')
 <script>
-    $(function () {
-        $('#date_of_birth').datetimepicker({
-            locale: 'en'
-        });
+    $(document).ready(function () {
+        $('#date_of_birth').datepicker({
+            uiLibrary: 'bootstrap4'
+        })
     });
 </script>
+@stop

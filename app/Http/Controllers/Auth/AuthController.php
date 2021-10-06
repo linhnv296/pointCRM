@@ -44,7 +44,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials, $remember)) {
             if (Auth::user()->role_id == 2) {
-                return redirect()->route('home.page')->with('success', 'Logged in successfully');
+                return redirect("/")->with('success', 'Logged in successfully');
             } else {
                 return redirect()->route('voyager.dashboard');
             }
