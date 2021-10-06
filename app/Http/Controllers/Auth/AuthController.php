@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
+use App\Models\Point;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -56,7 +57,8 @@ class AuthController extends Controller
 
     public function showRegisterForm()
     {
-        return view('frontend/auth/register');
+        $course = Point::all();
+        return view('frontend/auth/register', compact('course'));
     }
     public function logout(Request $request)
     {

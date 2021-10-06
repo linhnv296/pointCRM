@@ -16,7 +16,7 @@ class UpdateUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('phone')->nullable();
             $table->tinyInteger('sex')->nullable();
-            $table->date('date_of_birth')->nullable();
+            $table->string('date_of_birth')->nullable();
             $table->string('facebook')->nullable();
             $table->string('province')->nullable();
             $table->string('education')->nullable();

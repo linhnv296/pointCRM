@@ -29,6 +29,8 @@ class User extends \TCG\Voyager\Models\User
         'education',
         'job',
         'target',
+        'point',
+        'course',
     ];
 
     /**
