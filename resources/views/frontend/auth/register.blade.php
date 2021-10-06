@@ -25,6 +25,9 @@
                 <form method="post" action="{{ route('auth.create') }}">
                     @csrf
                     <div class="form-row">
+
+                    </div>
+                    <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="email">Email <span class="requied padding-5">*</span></label>
                             <input type="email" class="form-control" name="email" id="email">
@@ -32,8 +35,6 @@
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
-                    </div>
-                    <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="password">Mật Khẩu</label>
                             <input type="password" class="form-control" id="password" name="password">
@@ -103,8 +104,8 @@
                         <div class="form-group col-md-6">
                             <label for="course">khóa học <span class="requied padding-5">*</span></label>
                             <select id="course" name="course" class="form-control">
-                                @foreach($course as $value)
-                                    <option selected value="{{$value->id}}">{{$value->region}}</option>
+                                @foreach(config('app.register_course') as $value)
+                                    <option selected value="{{$value}}">{{$value}}</option>
                                 @endforeach
                             </select>
                             @error('name')
@@ -120,13 +121,24 @@
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-3 col-sm-6">
                             <label for="education">Trình Độ Học Vấn <span class="requied padding-5">*</span></label>
                             <select id="education" name="education" class="form-control">
-                                <option selected value="1">THCS</option>
-                                <option value="2">THPT</option>
-                                <option value="3">Cao Đẳng</option>
-                                <option value="4">Đại Học</option>
+                                <option>THCS</option>
+                                <option>THPT</option>
+                                <option>Cao Đẳng</option>
+                                <option>Đại Học</option>
+                            </select>
+                            @error('name')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="form-group col-md-3 col-sm-6">
+                            <label for="education">Mục đích học tập <span class="requied padding-5">*</span></label>
+                            <select id="edu_target" name="edu_target" class="form-control">
+                                <option>Làm việc trong nước</option>
+                                <option>Du học</option>
+                                <option>Lao động nước ngoài</option>
                             </select>
                             @error('name')
                             <small class="form-text text-danger">{{ $message }}</small>
