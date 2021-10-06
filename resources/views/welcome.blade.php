@@ -5,6 +5,7 @@
     <!-- Bootstrap CSS / Color Scheme -->
     <link rel="stylesheet" href="../../css/bootstrap.css">
 <!--Header Section-->
+    @if(!auth()->user())
 <section class="bg-gradient pt-5 pb-6">
     <div class="container">
         <div class="row mt-6">
@@ -53,7 +54,7 @@
         </div>
     </div>
 </section>
-
+@endif
 <!--Features Section-->
 <section class="py-6">
     <div class="container">
