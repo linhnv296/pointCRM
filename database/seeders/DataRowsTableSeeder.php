@@ -760,7 +760,7 @@ class DataRowsTableSeeder extends Seeder
                 'id' => 47,
                 'data_type_id' => 10,
                 'field' => 'description',
-                'type' => 'text',
+                'type' => 'text_area',
                 'display_name' => 'Mô tả',
                 'required' => 1,
                 'browse' => 1,
