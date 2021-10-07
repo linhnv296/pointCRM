@@ -69,7 +69,7 @@ class RegisterController extends Controller
 
     protected function addPoint($data, $user)
     {
-        $point = Point::query()->where("id", '=', $data['course'])->get();
+        $point = setting('admin.point_register');
         $dataUserInvite = User::query()->where("email", $data['email_user'])->get();
         if (!$dataUserInvite) return;
         $user->point = $point[0]->point;

@@ -2,11 +2,14 @@
 @section('content')
     <style>
         .container-fluid .row .login_content {
-            height: calc(100vh - 180px);
+            min-height: calc(100vh - 180px);
             position: relative;
             background: aliceblue;
-            overflow-y: auto;
             padding-top: 50px;
+        }
+
+        .requied {
+            color: red;
         }
 
         .container-fluid .row .login_content form {
@@ -17,9 +20,43 @@
     </style>
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-10 col-md-8 col-lg-4 login_content">
+            <div class="col-12 col-md-10 col-lg-10 login_content">
+                <H2 class="text-center">Đăng ký tài khoản</H2>
                 <form method="post" action="{{ route('auth.create') }}">
                     @csrf
+                    <div class="form-row">
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="email">Email <span class="requied padding-5">*</span></label>
+                            <input type="email" class="form-control" name="email" id="email">
+                            @error('name')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="password">Mật Khẩu</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="password_confirm">Nhập Lại Mật Khẩu</label>
+                            <input type="password" class="form-control" id="password_confirm" name="password_confirm">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="facebook">Link Facebook</label>
+                            <input type="text" class="form-control" name="facebook" id="facebook">
+                            @error('name')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="email_user">Email người giới thiệu</label>
+                            <input type="email" class="form-control" id="email_user" name="email_user">
+                        </div>
+                    </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Họ Tên <span
@@ -53,27 +90,24 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="phone">Số Điện Thoại <span class="requied padding-5">*</span></label>
-                            <input type="number" class="form-control" id="phone" name="phone" >
+                            <input type="number" class="form-control" id="phone" name="phone">
                             @error('name')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="job">Nghề Nghiệp</label>
-                        <input type="text" class="form-control" id="job" >
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="email">Email <span class="requied padding-5">*</span></label>
-                            <input type="email" class="form-control" name="email" id="email">
-                            @error('name')
-                            <small class="form-text text-danger">{{ $message }}</small>
-                            @enderror
+                            <label for="job">Nghề Nghiệp</label>
+                            <input type="text" class="form-control" id="job">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="facebook">Link Facebook</label>
-                            <input type="text" class="form-control" name="facebook" id="facebook">
+                            <label for="course">khóa học <span class="requied padding-5">*</span></label>
+                            <select id="course" name="course" class="form-control">
+                                @foreach(config('app.register_course') as $value)
+                                    <option selected value="{{$value}}">{{$value}}</option>
+                                @endforeach
+                            </select>
                             @error('name')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
@@ -82,46 +116,34 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="province">Địa Chỉ <span class="requied padding-5">*</span></label>
-                            <input type="text" class="form-control" id="province" name="province" >
+                            <input type="text" class="form-control" id="province" name="province">
                             @error('name')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-3 col-sm-6">
                             <label for="education">Trình Độ Học Vấn <span class="requied padding-5">*</span></label>
                             <select id="education" name="education" class="form-control">
-                                <option selected value="1">THCS</option>
-                                <option value="2">THPT</option>
-                                <option value="3">Cao Đẳng</option>
-                                <option value="4">Đại Học</option>
+                                <option>THCS</option>
+                                <option>THPT</option>
+                                <option>Cao Đẳng</option>
+                                <option>Đại Học</option>
                             </select>
                             @error('name')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
-                    </div>
-                        <div class="form-group">
-                            <label for="course">khóa học <span class="requied padding-5">*</span></label>
-                            <select id="course" name="course" class="form-control">
-                                @foreach($course as $value)
-                                <option selected value="{{$value->id}}">{{$value->region}}</option>
-                                @endforeach
+                        <div class="form-group col-md-3 col-sm-6">
+                            <label for="education">Mục đích học tập <span class="requied padding-5">*</span></label>
+                            <select id="edu_target" name="edu_target" class="form-control">
+                                <option>Làm việc trong nước</option>
+                                <option>Du học</option>
+                                <option>Lao động nước ngoài</option>
                             </select>
                             @error('name')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
-                    <div class="form-group">
-                        <label for="email_user">Email người giới thiệu</label>
-                        <input type="email" class="form-control" id="email_user" name="email_user" >
-                    </div>
-                    <div class="form-group">
-                        <label for="job">Mật Khẩu</label>
-                        <input type="password" class="form-control" id="password" name="password" >
-                    </div>
-                    <div class="form-group">
-                        <label for="job">Nhập Lại Mật Khẩu</label>
-                        <input type="password" class="form-control" id="password_confirm" name="password_confirm" >
                     </div>
                     <button type="submit" class="btn btn-primary">Sign in</button>
                 </form>
@@ -130,11 +152,11 @@
     </div>
 @endsection
 @section('javascript')
-<script>
-    $(document).ready(function () {
-        $('#date_of_birth').datepicker({
-            uiLibrary: 'bootstrap4'
-        })
-    });
-</script>
+    <script>
+        $(document).ready(function () {
+            $('#date_of_birth').datepicker({
+                uiLibrary: 'bootstrap4'
+            })
+        });
+    </script>
 @stop
