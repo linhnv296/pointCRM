@@ -30,31 +30,40 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="email">Email <span class="requied padding-5">*</span></label>
-                            <input type="email" class="form-control" name="email" id="email">
-                            @error('name')
+                            <input type="email" class="form-control" name="email" id="email" value="{{ old('email')}}">
+                            @error('email')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
                         <div class="form-group col-md-6">
                             <label for="password">Mật Khẩu</label>
-                            <input type="password" class="form-control" id="password" name="password">
+                            <input type="password" class="form-control" id="password" name="password" value="{{ old('password')}}">
+                            @error('password')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group col-md-6">
                             <label for="password_confirm">Nhập Lại Mật Khẩu</label>
-                            <input type="password" class="form-control" id="password_confirm" name="password_confirm">
+                            <input type="password" class="form-control" id="password_confirm" name="password_confirm" value="{{ old('password_confirm')}}">
+                            @error('password_confirm')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="facebook">Link Facebook</label>
-                            <input type="text" class="form-control" name="facebook" id="facebook">
-                            @error('name')
+                            <input type="text" class="form-control" name="facebook" id="facebook" value="{{ old('facebook')}}">
+                            @error('facebook')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
                         <div class="form-group col-md-6">
                             <label for="email_user">Email người giới thiệu</label>
-                            <input type="email" class="form-control" id="email_user" name="email_user">
+                            <input type="email" class="form-control" id="email_user" name="email_user" value="{{ old('email_user')}}">
+                            @error('email_user')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-row">
@@ -72,7 +81,7 @@
                                 <option selected value="1">Nam</option>
                                 <option value="2">Nữ</option>
                             </select>
-                            @error('name')
+                            @error('sex')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
@@ -80,18 +89,18 @@
                     <div class="form-row">
                         <div class="form-group col-md-6 date">
                             <label for="date_of_birth">Ngày Sinh <span class="requied padding-5">*</span></label>
-                            <input class="form-control" id="date_of_birth" name="date_of_birth">
+                            <input class="form-control" id="date_of_birth" name="date_of_birth" value="{{ old('date_of_birth')}}">
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar"></span>
                            </span>
-                            @error('name')
+                            @error('date_of_birth')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
                         <div class="form-group col-md-6">
                             <label for="phone">Số Điện Thoại <span class="requied padding-5">*</span></label>
-                            <input type="number" class="form-control" id="phone" name="phone">
-                            @error('name')
+                            <input type="number" class="form-control" id="phone" name="phone" value="{{ old('phone')}}">
+                            @error('phone')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
@@ -99,7 +108,10 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="job">Nghề Nghiệp</label>
-                            <input type="text" class="form-control" id="job">
+                            <input type="text" class="form-control" id="job" name="job" value="{{ old('job')}}">
+                            @error('job')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group col-md-6">
                             <label for="course">khóa học <span class="requied padding-5">*</span></label>
@@ -108,7 +120,7 @@
                                     <option selected value="{{$value}}">{{$value}}</option>
                                 @endforeach
                             </select>
-                            @error('name')
+                            @error('course')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
@@ -116,8 +128,8 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="province">Địa Chỉ <span class="requied padding-5">*</span></label>
-                            <input type="text" class="form-control" id="province" name="province">
-                            @error('name')
+                            <input type="text" class="form-control" id="province" name="province" value="{{ old('province')}}">
+                            @error('province')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
@@ -129,7 +141,7 @@
                                 <option>Cao Đẳng</option>
                                 <option>Đại Học</option>
                             </select>
-                            @error('name')
+                            @error('education')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
@@ -140,7 +152,7 @@
                                 <option>Du học</option>
                                 <option>Lao động nước ngoài</option>
                             </select>
-                            @error('name')
+                            @error('edu_target')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>

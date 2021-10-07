@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\UserRequest;
 use App\Models\Point;
 use App\Models\User;
@@ -78,7 +79,7 @@ class RegisterController extends Controller
         $dataUserInvite[0]->save();
     }
 
-    public function insert(Request $request)
+    public function insert(RegisterRequest $request)
     {
 //        $data = $request->validated();
         $data = $request->all();

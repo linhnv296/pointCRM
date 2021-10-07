@@ -19,23 +19,27 @@
                 <form method="POST" enctype="multipart/form-data" action="{{route('auth.login')}}">
                     @csrf
                     <div class="form-group">
-                        <label for="exampleInputEmail1">User name</label>
+                        <label for="exampleInputEmail1">Tài khoản</label>
                         <input type="text" class="form-control" id="exampleInputEmail1"
-                               placeholder="Enter user name" name="name">
+                               placeholder="Enter user name" name="name"
+                               value="{{ old('name')}}">
                         @error('name')
                         <small class="form-text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+                        <label for="exampleInputPassword1">Mật khẩu</label>
+                        <input type="password" value="{{ old('password')}}"
+                               class="form-control" id="exampleInputPassword1"
+                               placeholder="Password" name="password"
+                        >
                         @error('password')
                         <small class="form-text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <label class="form-check-label" for="exampleCheck1">Ghi nhớ đăng nhập</label>
                     </div>
                     <div class="row">
                         <div class="col-6">

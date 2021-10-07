@@ -123,9 +123,9 @@ class DataTypesTableSeeder extends Seeder
                 'description' => NULL,
                 'generate_permissions' => 1,
                 'server_side' => 0,
-                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-10-07 07:04:44',
-                'updated_at' => '2021-10-07 07:04:44',
+                'updated_at' => '2021-10-07 14:53:59',
             ),
         ));
         

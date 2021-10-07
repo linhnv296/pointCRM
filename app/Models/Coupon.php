@@ -14,6 +14,7 @@ class Coupon extends Model
      */
     protected $fillable = [
         'name',
+        'image',
         'description',
         'day_start',
         'day_finish',
