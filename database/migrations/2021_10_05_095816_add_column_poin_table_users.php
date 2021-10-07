@@ -15,7 +15,7 @@ class AddColumnPoinTableUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->integer('point')->default(0)->after('target');
-            $table->integer('course')->nullable()->after('point');
+            $table->string('course')->nullable()->after('point');
         });
     }
 
