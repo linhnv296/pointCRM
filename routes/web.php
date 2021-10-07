@@ -24,6 +24,8 @@ Route::post('/register', '\App\Http\Controllers\Auth\RegisterController@insert')
 Route::get('/logout', '\App\Http\Controllers\Auth\AuthController@logout')->middleware('auth')->name('auth.logout');
 Route::get('/list-user', '\App\Http\Controllers\ListUserController@showPage')->middleware('auth')->name('list.user');
 Route::post('/create-collaborators', '\App\Http\Controllers\CollaboratorsUserController@store')->middleware('auth')->name('collaborators.store');
+Route::get('/list-coupon', '\App\Http\Controllers\CouponController@showPage')->middleware('auth')->name('coupon.list');
+Route::post('/choose-coupon', '\App\Http\Controllers\CouponController@chooseCoupon')->middleware('auth')->name('coupon.choose');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
