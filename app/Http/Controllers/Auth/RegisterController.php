@@ -72,8 +72,8 @@ class RegisterController extends Controller
         $point = setting('admin.point_register');
         $dataUserInvite = User::query()->where("email", $data['email_user'])->get();
         if (!$dataUserInvite) return;
-        $user->point = $point[0]->point;
-        $dataUserInvite[0]->point = $dataUserInvite[0]->point + $point[0]->point;
+        $user->point = $point;
+        $dataUserInvite[0]->point = $dataUserInvite[0]->point + $point;
         $user->save();
         $dataUserInvite[0]->save();
     }
@@ -83,7 +83,7 @@ class RegisterController extends Controller
 //        $data = $request->validated();
         $data = $request->all();
         if (($data)) {
-           $user = $this->create($data);
+            $user = $this->create($data);
             $this->addPoint($data, $user);
             session()->flash('success', __('login-logout.register-success'));
             return redirect('/login')->with('message', __('login-logout.register-success'));
