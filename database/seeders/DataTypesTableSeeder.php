@@ -35,7 +35,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 1,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-09-26 12:35:50',
-                'updated_at' => '2021-09-29 16:32:22',
+                'updated_at' => '2021-10-07 15:44:32',
             ),
             1 => 
             array (
@@ -86,10 +86,10 @@ class DataTypesTableSeeder extends Seeder
                 'controller' => 'App\\Http\\Controllers\\PointController',
                 'description' => NULL,
                 'generate_permissions' => 1,
-                'server_side' => 1,
+                'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-09-26 12:50:02',
-                'updated_at' => '2021-09-27 14:53:37',
+                'updated_at' => '2021-10-07 15:41:27',
             ),
             4 => 
             array (
@@ -104,10 +104,10 @@ class DataTypesTableSeeder extends Seeder
                 'controller' => 'App\\Http\\Controllers\\CollaboratorsUserController',
                 'description' => NULL,
                 'generate_permissions' => 1,
-                'server_side' => 1,
+                'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-09-26 12:55:09',
-                'updated_at' => '2021-09-30 15:23:10',
+                'updated_at' => '2021-10-07 15:41:08',
             ),
             5 => 
             array (
