@@ -32,6 +32,13 @@
 @stop
 
 @section('content')
+    <style>
+        .read img.img-responsive {
+            max-width: 400px;
+            margin: auto;
+        }
+
+    </style>
     <div class="page-content read container-fluid">
         <div class="row">
             <div class="col-md-12">
